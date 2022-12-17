@@ -14,12 +14,14 @@ def day_1():
     Lines = file.readlines()
     result = 0
     tempVal = 0
+    totalCals = []
 
     for line in Lines:
         if line.strip():
             tempVal += int(line)
             # print(line)            
         else:
+            totalCals.append(tempVal)
             if (result < tempVal):
                 result = tempVal
             # print("Elf total: ", tempVal)
@@ -27,8 +29,11 @@ def day_1():
     if (result < tempVal):
         result = tempVal
     print("Elf total: ", result)
+    # print(totalCals)
+    top3Cals = sorted(totalCals, reverse=True)[:3]
+    print("Part 2 (top 3 sum) = " , sum(top3Cals))
         
     return result
 
 if __name__ == "__main__":
-    print(day_1())
+    day_1()

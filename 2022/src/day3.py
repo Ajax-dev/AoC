@@ -24,7 +24,16 @@ def day_3():
         # print("string first half is: %s " % str1, " and second half is %s" % str2, " \n and common is %s" % common)
         sum += values.get(common)
 
-    return sum
+    authSum = 0
+    for i in range(0, len(Lines), 3):
+        firstStr = Lines[i]
+        secondStr = Lines[i+1]
+        thirdStr = Lines[i+2]
+        common = ''.join(set(firstStr).intersection(secondStr).intersection(thirdStr)).strip()
+        # print(common)
+        authSum += values.get(common)
+
+    return (sum, authSum)
 
 if __name__ == "__main__":
     print(day_3())

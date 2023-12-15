@@ -1,6 +1,6 @@
 import re
 def main():
-    my_file = open("day1.txt", "r")
+    my_file = open("./day1/day1.txt", "r")
     data = my_file.read()
     data_in_list = data.split("\n")
     #print(data_in_list)
@@ -43,7 +43,7 @@ def findNumInString(string):
     numStrings = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     stringRes = re.findall(r"(?=("+'|'.join(numStrings)+r"))", string)
     # stringRes = re.findall("(\d)|(?=one|two|three|four|five|six|seven|eight|nine)", string)
-    print(stringRes)
+    # print(stringRes)
 
     counter = 0
     for j in stringRes:
@@ -51,8 +51,8 @@ def findNumInString(string):
             stringRes[counter] = str(mapOfNums[j])
         counter+=1
 
-    print("new after dictionary parsing")
-    print(stringRes)
+    # print("new after dictionary parsing")
+    # print(stringRes)
     res = stringRes[0] + stringRes[-1]
     # print(res)
     return res
